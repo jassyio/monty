@@ -1,8 +1,7 @@
 #include "monty.h"
 
 /**
- *
- * main - entry into the  interpreter
+ * main - entry into interpreter
  * @argc: argc counter
  * @argv: arguments
  * Return: 0 on success
@@ -72,3 +71,4 @@ int main(int argc, char *argv[])
 	free_dlist(&h); free(buffer);
 	close(fd);
 	return (0);
+}
