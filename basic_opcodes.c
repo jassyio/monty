@@ -36,7 +36,9 @@ void exec_nop(stack_t **stack, unsigned int line_number)
 }
 /**
  * exec_pint - this function executes the pint opcode
- * @stack: the stack to read the numbers
+ * @stack: the stack to read the
+ * 
+ * numbers
  * @line_number: number of line that is executed
  * Return: void function
  */
@@ -49,7 +51,8 @@ void exec_pint(stack_t **stack, unsigned int line_number)
 }
 /**
  * exec_pop - this function executes the pop opcode
- * @stack: the stack to read the numbers
+ * @stack: the stack to read t:
+ * he numbers
  * @line_number: number of line that is executed
  * Return: void function
  */
@@ -65,6 +68,7 @@ void exec_pop(stack_t **stack, unsigned int line_number)
 	free(tmp);
 }
 /**
+ 
  * exec_swap - this function executes the swap opcode
  * @stack: the stack to read the numbers
  * @line_number: number of line that is executed

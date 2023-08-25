@@ -1,8 +1,10 @@
 #include "monty.h"
 settings_t settings;
 /**
+ *
  * main - entry point
- * @argc: count of arguments
+ * @argc: count of 
+ * arguments
  * @argv: The arguments
  * Description: entry point for the program to exec monty code
  * Return: 0 on success

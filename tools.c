@@ -2,7 +2,8 @@
 /**
  * is_number - check if the string is a number
  * @c: string
- * Return: 1 if is number digit
+ * Return: 1 if 
+ * *is number digit
  * if not, 0 is returned.
  */
 int is_number(char *c)

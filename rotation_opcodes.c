@@ -1,7 +1,9 @@
 #include "monty.h"
 /**
+ 
  * exec_rotl - this function executes the pchar opcode
- * @stack: the stack to read the numbers
+ * @stack: the stack to read the
+ * * numbers
  * @line_number: number of line that is executed
  * Return: void function
  */
@@ -50,8 +52,10 @@ void exec_rotr(stack_t **stack, unsigned int line_number)
 }
 /**
  * exec_stack - this function executes the stack opcode
+ * 
  * @stack: the stack to read the numbers
- * @line_number: number of line that is executed
+ * @line_number: number of line that
+ * * is executed
  * Return: void function
  */
 void exec_stack(stack_t **stack, unsigned int line_number)
@@ -62,7 +66,8 @@ void exec_stack(stack_t **stack, unsigned int line_number)
 }
 /**
  * exec_queue - this function executes the queue opcode
- * @stack: the stack to read the numbers
+ * @stack: the stack to 
+ * *read the numbers
  * @line_number: number of line that is executed
  * Return: void function
  */

@@ -2,7 +2,8 @@
 /**
  * exec_pchar - this function executes the pchar opcode
  * @stack: the stack to read the numbers
- * @line_number: number of line that is executed
+ * @line_number: number of line
+ * * that is executed
  * Return: void function
  */
 void exec_pchar(stack_t **stack, unsigned int line_number)
@@ -18,7 +19,8 @@ void exec_pchar(stack_t **stack, unsigned int line_number)
 /**
  * exec_pstr - this function executes the pstr opcode
  * @stack: the stack to read the numbers
- * @line_number: number of line that is executed
+ * @line_number: number of line 
+ * *that is executed
  * Return: void function
  */
 void exec_pstr(stack_t **stack, unsigned int line_number)

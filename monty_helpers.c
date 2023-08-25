@@ -1,6 +1,7 @@
 #include "monty.h"
 
 /**
+ *
  * verify_args - verify the args
  * @argc: arguments
  * Return: 0 in succes -1 in fail
@@ -16,7 +17,8 @@ void verify_args(int argc)
 }
 
 /**
- * open_and_read - open the monty file and read his content
+ * open_and_read - open the mo
+ * *nty file and read his content
  * @f: the file to open
  * Return: Void no return
  */
@@ -98,7 +100,8 @@ void exec_monty(stack_t **stack, char *opcode, int ln)
 		}
 	error_handler(opcode, -128, ln);
 }
-/**
+/**:wq
+ *
  * set - set initial values
  * Return: void
  */
@@ -110,6 +113,7 @@ void set(void)
 	settings.queue = false;
 }
 /**
+ *
  * clean - clean men
  * Return: void
  */

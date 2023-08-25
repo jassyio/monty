@@ -1,5 +1,6 @@
 #include "monty.h"
 /**
+ *
  * exec_div - this function executes the div opcode
  * @stack: the stack to read the numbers
  * @line_number: number of line that is executed
@@ -18,6 +19,7 @@ void exec_div(stack_t **stack, unsigned int line_number)
 	exec_pop(stack, line_number);
 }
 /**
+ *
  * exec_mod - this function executes the mod opcode
  * @stack: the stack to read the numbers
  * @line_number: number of line that is executed

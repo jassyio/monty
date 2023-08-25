@@ -65,7 +65,8 @@ stack_t *push_queue(stack_t **head, const int n)
 	return (new);
 }
 /**
- * fstack - free the stack
+ * fstack - free the 
+ * *stack
  * @head: head of the stack
  * Return: void
  */
