@@ -1,27 +1,24 @@
 #ifndef MONTY_H
 #define MONTY_H
-
-/* Libraries */
-
 #include <stdio.h>
-#include <unistd.h>
 #include <stdlib.h>
+#include <unistd.h>
 #include <string.h>
-#include <stdbool.h>
-#include "monty.h"
+#include <ctype.h>
+#include <sys/types.h>
+#include <sys/stat.h>
+#include <fcntl.h>
+
+/* data structures */
 
 /**
- 
- * struct stack_s - doubly linked list representation of a*
- * stack (or queue)
+ * struct stack_s - doubly linked list representation of a stack (or queue)
  * @n: integer
- * @prev: points to the previous element of the stack 
- * *(or queue)
- * @next: points to the next element of the stack
- * * (or queue)
+ * @prev: points to the previous element of the stack (or queue)
+ * @next: points to the next element of the stack (or queue)
+ *
  * Description: doubly linked list node structure
- * for stack, queues, LIFO, FIFO alx
- * project
+ * for stack, queues, LIFO, FIFO Holberton project
  */
 typedef struct stack_s
 {
@@ -29,13 +26,14 @@ typedef struct stack_s
 	struct stack_s *prev;
 	struct stack_s *next;
 } stack_t;
+
 /**
- * struct instruction_s - opcode and its function
+ * struct instruction_s - opcoode and its function
  * @opcode: the opcode
  * @f: function to handle the opcode
+ *
  * Description: opcode and its function
- * for stack, queues, LIFO, FIFO alx
- * project
+ * for stack, queues, LIFO, FIFO Holberton project
  */
 typedef struct instruction_s
 {
@@ -43,78 +41,29 @@ typedef struct instruction_s
 	void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 
-/**
- * struct instruction_s - opcode and its function
- * @opcode: the opcode
- * @f: function to handle the opcode
- *
- * Description: opcode and its function
- * for stack, queues, LIFO, FIFO
- */
+/* opcodes related prototypes */
+void (*get_op_func(char *token1))(stack_t **stack, unsigned int line_number);
+void push(stack_t **h, unsigned int line_number, const char *n);
+void pop(stack_t **h, unsigned int line_number);
+void pint(stack_t **h, unsigned int line_number);
+void pall(stack_t **h, unsigned int line_number);
+void swap(stack_t **h, unsigned int line_number);
+void nop(stack_t **h, unsigned int line_number);
+void pchar(stack_t **h, unsigned int line_number);
+void pstr(stack_t **h, unsigned int line_number);
+void rotl(stack_t **h, unsigned int line_number);
+void rotr(stack_t **h, unsigned int line_number);
 
-/**
- * struct settings_s - settings for all the program
- * @file: file
- * @line: line
- * @stack: stack
- * @queue: false
- */
-typedef struct settings_s
-{
-	FILE *file;
-	char *line;
-	stack_t *stack;
-	_Bool queue;
-} settings_t;
+/* calculator prototypes */
+void _add(stack_t **h, unsigned int line_number);
+void _sub(stack_t **h, unsigned int line_number);
+void _mul(stack_t **h, unsigned int line_number);
+void _div(stack_t **h, unsigned int line_number);
+void _mod(stack_t **h, unsigned int line_number);
 
-extern settings_t settings;
+/* doubly linked list related prototypes */
+int add_end_node(stack_t **h, int n);
+void delete_end_node(stack_t **h);
+void free_dlist(stack_t **h);
 
-
-
-/* helpers */
-void verify_args(int argc);
-void open_and_read(char *f);
-void exec_monty(stack_t **stack, char *opcode, int ln);
-void set(void);
-void clean(void);
-
-/*Tools*/
-int is_number(char *c);
-
-/* Instructions */
-void exec_pall(stack_t **stack, unsigned int line_number);
-void exec_pop(stack_t **stack, unsigned int line_number);
-void exec_pint(stack_t **stack, unsigned int line_number);
-void exec_swap(stack_t **stack, unsigned int line_number);
-void exec_nop(stack_t **stack, unsigned int line_number);
-
-/* String Instructions */
-void exec_pchar(stack_t **stack, unsigned int line_number);
-void exec_pstr(stack_t **stack, unsigned int line_number);
-
-/* Aritmetic Instructions */
-void exec_div(stack_t **stack, unsigned int line_number);
-void exec_mod(stack_t **stack, unsigned int line_number);
-void exec_add(stack_t **stack, unsigned int line_number);
-void exec_sub(stack_t **stack, unsigned int line_number);
-void exec_mul(stack_t **stack, unsigned int line_number);
-
-/* Rotations Instructions*/
-void exec_rotl(stack_t **stack, unsigned int line_number);
-void exec_rotr(stack_t **stack, unsigned int line_number);
-
-/* Errors managements */
-
-void error_handler(char *opcode, int errorcode, int ln);
-
-/* FIFO AND LIFO */
-void exec_stack(stack_t **stack, unsigned int line_number);
-void exec_queue(stack_t **stack, unsigned int line_number);
-
-/* Stack Management */
-
-stack_t *push_stack(stack_t **head, const int n);
-stack_t *push_queue(stack_t **head, const int n);
-void fstack(stack_t *head);
-
-#endif
+#endifi
